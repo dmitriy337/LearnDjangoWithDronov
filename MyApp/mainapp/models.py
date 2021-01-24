@@ -15,6 +15,6 @@ class LearnModels(models.Model):
         EXCHANGE = 3, 'Обменяю'
 
     Kind = models.SmallIntegerField(choices=Kinds.choices, default=Kinds.SELL)
-    
+
     Email = models.EmailField(null=True, verbose_name='Email')
-    
+     
