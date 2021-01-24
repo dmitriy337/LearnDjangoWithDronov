@@ -5,6 +5,16 @@ from django.db import models
 class Posts(models.Model):
     Title = models.CharField(max_length=50, verbose_name='Title')
     MainText = models.TextField(null=True, verbose_name='Text', )
-    Email = models.EmailField(null=True, verbose_name='Email')
     Price = models.IntegerField(null=True, verbose_name='Price')
     DataPublish = models.DateTimeField((auto_now_add=True, verbose_name='Date')
+
+class LearnModels(models.Model):
+    class Kinds(models.IntegerChoices):
+        BUY = 1, 'Куплю'
+        SELL = 2, 'Продам'
+        EXCHANGE = 3, 'Обменяю'
+
+    Kind = models.SmallIntegerField(choices=Kinds.choices, default=Kinds.SELL)
+    
+    Email = models.EmailField(null=True, verbose_name='Email')
+    
