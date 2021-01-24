@@ -3,6 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Posts(models.Model):
+    def f(self):
+        pass
     Title = models.CharField(max_length=50, verbose_name='Title')
     MainText = models.TextField(null=True, verbose_name='Text', )
     Price = models.IntegerField(null=True, blank=True, verbose_name='Price')
