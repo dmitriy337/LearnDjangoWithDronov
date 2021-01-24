@@ -8,6 +8,11 @@ class Posts(models.Model):
     Price = models.IntegerField(null=True, verbose_name='Price')
     DataPublish = models.DateTimeField((auto_now_add=True, verbose_name='Date')
 
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
+        ordering = ['-DataPublish', 'Title']
+
 class LearnModels(models.Model):
     class Kinds(models.IntegerChoices):
         BUY = 1, 'Куплю'
