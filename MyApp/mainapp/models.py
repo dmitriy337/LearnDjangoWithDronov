@@ -1,7 +1,7 @@
 from django.db import models
 
 
-# Create your models here.
+#Этот коментарий тут не нужен
 class Posts(models.Model):
     Title = models.CharField(max_length=50, verbose_name='Title')
     MainText = models.TextField(null=True, verbose_name='Text', )
