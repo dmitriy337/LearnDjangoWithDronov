@@ -3,6 +3,10 @@ from django.db import models
 
 #Этот коментарий тут не нужен
 class Posts(models.Model):
+    class Kinds(models.IntegerChoices):
+        BUY = 1, 'Куплю'
+        SELL = 2, 'Продам'
+        EXCHANGE = 3, 'Обменяю'
     Title = models.CharField(max_length=50, verbose_name='Title')
     MainText = models.TextField(null=True, verbose_name='Text', )
     Price = models.IntegerField(null=True, blank=True, verbose_name='Price')
