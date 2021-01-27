@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Articles{% endblock %}
+
+
+{% block mainblock %}
+
+
+<img src="{% static "images/unnamed.jpg" %}" alt="My image"/>
+
+<div class="wrapper">
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+    </style>
+    {% for c in content %}
+        <div>
+            <h4>{{c.Title}}</h4>
+            <p>{{c.MainText}}</p>
+            {% if c.Price == None %}
+                <p>It's a free!</p>
+            {% else %}
+                <p>{{c.Price}}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

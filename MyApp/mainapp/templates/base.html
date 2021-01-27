@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" src="{% static "css/main.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header-div" >
+            <h2 style="text-decoration: none;">It's header</h2>
+        </div>
+        <style>
+            .header-div {
+                border: 1px solid blanchedalmond;
+            }
+        </style>
+    </header>
+    {% block mainblock %}{% endblock %}
+</body>
+</html>
